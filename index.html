@@ -1,10 +1,23 @@
-<link rel="stylesheet" type="text/css" href="style.css" />
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="style.css" />
 
-<div class="container pullDown">
-  <a>DOES</a>
-  <a>THIS</a>
-  <a>WORK</a>
-  <a>?????</a>
-</div>
+	<!-- Making container same width as menubar -->
+	<script> 
+		var w=document.getLementById('menubardiv').style.width;
+		document.getElementById('contentdiv').style.width=w;
+	</script>
+</head>
+<body>
+	<div class="menubar pullDown" id="menubardiv">
+	  <a>DOES</a>
+	  <a>THIS</a>
+	  <a>WORK</a>
+	  <a>?????</a>
+	</div>
 
-Hello World why isn't my website changing, again????
+	<div class="container">
+		Hello World why isn't my website changing, again????
+	</div>
+</body>
+</html>

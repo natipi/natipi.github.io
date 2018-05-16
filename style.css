@@ -56,5 +56,6 @@ div.container
 	/*float:center;*/
 	background: #FFF;
 	color: #3A3A3A;
-	width:40em;
+	max-width:40em;
+	margin: auto;
 }

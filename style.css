@@ -84,7 +84,7 @@ div.highlightTextIn a
 
 /* From https://codemyui.com/gradient-fill-underline-hover-effect-multiple-lines/ */
 .thickgradientunderline {
-	background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+	background-image: linear-gradient(120deg, #FFDCDE 0%, #E0E9FF 100%);
     background-repeat: no-repeat;
 	background-size: 100% 0.2em;
 	background-position: 0 88%;

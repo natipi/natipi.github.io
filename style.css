@@ -11,13 +11,14 @@ div.menubar
 	background: #32FF00; /*just for testing sake*/
 	/*float:center;*/ 
 	display: inline-block; /* makes the width be content-sized */
+	white-space:nowrap; /*hopefully force 1 line*/
 }
 
 div.menubar a
 {
     color: #3A3A3A;
     text-decoration: none;
-    font: 20px 'Courier New', Courier, monospace;
+    /*font: 20px 'Courier New', Courier, monospace;*/
     margin: 0px 10px;
     padding: 10px 10px;
     position: relative;

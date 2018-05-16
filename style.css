@@ -9,7 +9,8 @@ div.menubar
 	padding: 1em 1em;
 	text-align: center;
 	background: #FFF;
-	float:center;
+	float:center; 
+	display: inline-block; /* makes the width be content-sized */
 }
 
 div.menubar a

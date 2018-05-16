@@ -60,7 +60,7 @@ div.container
 div.highlightTextIn a:before
 {
     position: absolute;
-    color: #DEA6FF;
+    color: #8FFF72;
     /*top: 0px;
     left: 0px;
     padding: 10px;*/
@@ -79,7 +79,7 @@ div.highlightTextIn a:hover:before
 
 div.highlightTextIn a
 {
-    color: #3A3A3A; 
+    color: #DEA6FF; 
 }
 
 div.highlightTextIn a:before

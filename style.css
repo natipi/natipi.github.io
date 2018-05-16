@@ -82,7 +82,7 @@ div.highlightTextIn a
     color: #DEA6FF; 
 }*/
 
-div.container a {
+.magiclink {
 	background-color: #DEA6FF;
 	background-size: 100% 0.2em;
 	background-position: 0 88%;

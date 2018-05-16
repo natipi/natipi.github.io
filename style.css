@@ -44,7 +44,7 @@ div.pullDown a:hover:before
     height: 100%;
 }
 
-div.maincontent
+div.mycontainer
 {
     font-family: 'Courier New', Courier, monospace;
     margin: 0 auto;

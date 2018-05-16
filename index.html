@@ -10,12 +10,64 @@
 		document.getElementById('contentdiv').style.width=w;
 	</script>
 	-->
-	<script>
+<!-- 	<script>
 		$(document).ready(function() {
 		  $(".menubar").css({
 		    'width': ($(".container").width() + 'px')
 		  });
 		});
+	</script> -->
+
+	<!-- not my code!! 'tis from https://codepen.io/Wking/pen/BdmpVx -->
+	<script>
+		// VARIABLES
+		const magicalUnderlines = Array.from(document.querySelectorAll('.underline--magical'));
+
+		const gradientAPI = 'https://gist.githubusercontent.com/wking-io/3e116c0e5675c8bcad8b5a6dc6ca5344/raw/4e783ce3ad0bcd98811c6531e40256b8feeb8fc8/gradient.json';
+
+		// HELPER FUNCTIONS
+
+		// 1. Get random number in range. Used to get random index from array.
+		const randNumInRange = max => Math.floor(Math.random() * (max - 1));
+
+		// 2. Merge two separate array values at the same index to 
+		// be the same value in new array.
+		const mergeArrays = (arrOne, arrTwo) => arrOne
+		  .map((item, i) => `${item} ${arrTwo[i]}`)
+		  .join(', ');
+
+		// 3. Curried function to add a background to array of elms
+		const addBackground = (elms) => (color) => {
+		  elms.forEach(el => {
+		    el.style.backgroundImage = color;
+		  });
+		}
+		// 4. Function to get data from API
+		const getData = async(url) => {
+		  const response = await fetch(url);
+		  const data = await response.json();
+		  return data.data;
+		}
+
+		// 5. Partial Application of addBackground to always apply 
+		// background to the magicalUnderlines constant
+		const addBackgroundToUnderlines = addBackground(magicalUnderlines);
+
+		// GRADIENT FUNCTIONS
+
+		// 1. Build CSS formatted linear-gradient from API data
+		const buildGradient = (obj) => `linear-gradient(${obj.direction}, ${mergeArrays(obj.colors, obj.positions)})`;
+
+		// 2. Get single gradient from data pulled in array and
+		// apply single gradient to a callback function
+		const applyGradient = async(url, callback) => {
+		  const data = await getData(url);
+		  const gradient = buildGradient(data[randNumInRange(data.length)]);
+		  callback(gradient);
+		}
+
+		// RESULT
+		applyGradient(gradientAPI, addBackgroundToUnderlines);
 	</script>
 	
 </head>
@@ -38,11 +90,11 @@
 			</div>
 			This website is a work in progress!!! <br /><br />
 
-			My name is Natalia Pacheco-Tallaj, I am an undergraduate studying mathematics at Harvard University. I am interested in all areas of math, but lately I've been focused in knot theory, algebraic topology, and differential topology. Last summer, I did a topology REU at UMich. This summer I will be at Williams' SMALL program, doing knot theory. On a more computational note: In the past, I've worked on assistive technologies research, cryptography research, and web-development. <br /><br />
+			My name is Natalia Pacheco-Tallaj, I am an undergraduate studying mathematics at Harvard University. I am interested in all areas of math, but lately I've been focused in knot theory, algebraic topology, and differential topology. Last summer, I did a topology REU at UMich. This summer I will be at Williams' SMALL program, doing knot theory. On a more computational note: In the past, I've worked on assistive technologies research, cryptography research, and web-development. <span class="thickgradientunderline">Here is my CV.</span> <br /><br />
 
-			<span style="display: inline-block; width: 3ch;">&#9;</span>I also make art. I was mostly self-taught, until I took a drawing class at Harvard last semester. When I am not scribbling about manifolds or drawing, I enjoy taking long walks, watching sci-fi, listening to folk music, studying languages, and spending with friends and family.<br /><br />
+			<span style="display: inline-block; width: 3ch;">&#9;</span>I also make <span class="thickgradientunderline" href="https://www.instagram.com/natiparte/">art.</span> I was mostly self-taught, until I took a drawing class at Harvard last semester. When I am not scribbling about manifolds or drawing, I enjoy <span class="thickgradientunderline">taking long walks,</span> watching sci-fi, listening to folk music, studying languages, and spending with friends and family.<br /><br />
 
-			<span style="display: inline-block; width: 3ch;">&#9;</span>I am very passionate about inclusivity in mathematics and in STEM (gender, race, income,...). I am proud to serve as a board member for Harvard Gender Inclusivity in Mathematics, and to have had the opportunity to organize the 2018 Women in Math and Statistics Conference last Spring.
+			<span style="display: inline-block; width: 3ch;">&#9;</span>I am very passionate about inclusivity in mathematics and in STEM (gender, race, income,...). I am proud to serve as a board member for <span class="thickgradientunderline" href="https://harvardgiim.org">Harvard Gender Inclusivity in Mathematics,</span> and to have had the opportunity to organize the 2018 <span class="thickgradientunderline" href="https://harvardgiim.org/wims/">Women in Math and Statistics Conference</span> last Spring.
 		</div>
 	</div>
 </body>

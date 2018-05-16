@@ -9,6 +9,7 @@ div.menubar
 	padding: 1em 1em;
 	text-align: center;
 	background: #FFF;
+	float:center;
 }
 
 div.menubar a
@@ -50,7 +51,7 @@ div.container
     margin: 0 auto;
 	padding: 1em 1em;
 	text-align: left;
-	aligh:center;
+	float:center;
 	background: #FFF;
 	color: #3A3A3A;
 }

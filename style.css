@@ -1,5 +1,5 @@
 /*
-	The following code was modified from https://codepen.io/anon/pen/YLegaN
+	A lot of the following code was modified from https://codepen.io/anon/pen/YLegaN
 */
 
 div.menubar
@@ -44,9 +44,6 @@ div.pullDown a:hover:before
     height: 100%;
 }
 
-/*
-	The following code is original
-*/
 div.container
 {
     font-family: 'Courier New', Courier, monospace;
@@ -59,3 +56,33 @@ div.container
 	max-width:45em;
 	margin: auto;
 }
+
+div.highlightTextIn a:before
+{
+    position: absolute;
+    color: #DEA6FF;
+    /*top: 0px;
+    left: 0px;
+    padding: 10px;*/
+    overflow: hidden;
+    content: attr(alt);
+    transition: all 0.3s;
+    transform: scale(0.8);
+    opacity: 0;
+} 
+
+div.highlightTextIn a:hover:before
+{
+    transform: scale(1);
+    opacity: 1;
+}
+
+div.highlightTextIn a
+{
+    color: #3A3A3A; 
+}
+
+div.highlightTextIn a:before
+{
+    transform: scale(1.2);
+} 

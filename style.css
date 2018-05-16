@@ -9,7 +9,7 @@ div.menubar
 	padding: 1em 1em;
 	text-align: center;
 	background: #32FF00; /*just for testing sake*/
-	float:center; 
+	/*float:center;*/ 
 	display: inline-block; /* makes the width be content-sized */
 }
 
@@ -52,7 +52,7 @@ div.container
     margin: 0 auto;
 	padding: 1em 1em;
 	text-align: left;
-	float:center;
+	/*float:center;*/
 	background: #FFF;
 	color: #3A3A3A;
 }

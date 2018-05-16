@@ -8,7 +8,7 @@ div.menubar
     margin: 0 auto;
 	padding: 1em 1em;
 	text-align: center;
-	background: #FFF;
+	background: #32FF00; /*just for testing sake*/
 	float:center; 
 	display: inline-block; /* makes the width be content-sized */
 }

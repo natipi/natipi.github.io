@@ -90,3 +90,6 @@ div.highlightTextIn a
 	background-position: 0 88%;
 /*	transition: background-size 0.25s ease-in;
 */}
+.thickgradientunderline:hover {
+    background-size: 100% 88%;
+  }

@@ -92,7 +92,7 @@ div.highlightTextIn a
 }
 .thickgradientunderline:hover {
     background-size: 100% 88%;
-    color: #FFF;
+    /*color: #FFF;*/
   }
 
 .thickgradientunderline a {
@@ -106,5 +106,6 @@ div.highlightTextIn a
 
 .emph
 {
-	color: #CD7AFF;
+	/*color: #CD7AFF;*/
+	font-weight: bold;
 }

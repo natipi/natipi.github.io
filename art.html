@@ -1,9 +1,6 @@
 <html>
 <head>
 	<link rel="stylesheet" type="text/css" href="style.css" />
-
-	<script src="jquery-3.3.1.min.js"></script>
-
 	<!-- Making container same width as menubar 
 	<script> 
 		var w=document.getLementById('menubardiv').style.width;
@@ -70,6 +67,8 @@
 		// RESULT
 		applyGradient(gradientAPI, addBackgroundToUnderlines);
 	</script>
+	<!-- Slick for slider -->
+	<link rel="stylesheet" type="text/css" href="slick/slick.css"/> 
 </head>
 <body>
 	<div align="center">
@@ -85,7 +84,37 @@
 
 		<div class="container" id="contentdiv">
 			While I find the time to make a proper portfolio, check out my <span class="thickgradientunderline"><a href="https://www.instagram.com/natiparte/">instagram art account.</a></span> 
+
+			Ok y'all Imma try to make a carrousel. Here goes nothing. 
+
+			<div class="slider">
+			    <div>content</div>
+			    <div>content!!</div>
+			    <div>coooooontenido</div>
+			  </div>
 		</div>
 	</div>
+
+	<!-- JQuery and more slick for slider -->
+	<script src="jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script> 
+	<script type="text/javascript" src="slick/slick.min.js"></script>
+	<!-- Initialize slider -->
+	<script>
+		$(document).ready(function(){
+		  $('.slider').slick({
+		    setting-name: setting-value
+		  });
+		});
+
+		$('.slider').slick({
+		  dots: true,
+		  infinite: true,
+		  speed: 300,
+		  slidesToShow: 1,
+		  centerMode: true,
+		  variableWidth: true
+		});   
+	</script>
 </body>
 </html>

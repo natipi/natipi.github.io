@@ -2,10 +2,20 @@
 <head>
 	<link rel="stylesheet" type="text/css" href="style.css" />
 
-	<!-- Making container same width as menubar -->
+	<script src="jquery-3.3.1.min.js"></script>
+
+	<!-- Making container same width as menubar 
 	<script> 
 		var w=document.getLementById('menubardiv').style.width;
 		document.getElementById('contentdiv').style.width=w;
+	</script>
+	-->
+	<script>
+		$(document).ready(function() {
+		  $(".menubar").css({
+		    'width': ($(".container").width() + 'px')
+		  });
+		});
 	</script>
 </head>
 <body>

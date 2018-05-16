@@ -93,3 +93,8 @@ div.highlightTextIn a
 .thickgradientunderline:hover {
     background-size: 100% 88%;
   }
+
+.thickgradientunderline a {
+	color: #3A3A3A;
+	text-decoration: none;
+}

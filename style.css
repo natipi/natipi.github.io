@@ -6,7 +6,7 @@ div.menubar
 {
     font-family: 'Courier New', Courier, monospace;
     margin: 0 auto;
-	padding: 1em 1em;
+	padding: 2em 2em;
 	text-align: center;
 	background: #32FF00; /*just for testing sake*/
 	/*float:center;*/ 

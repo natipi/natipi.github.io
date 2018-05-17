@@ -61,6 +61,62 @@
 		applyGradient(gradientAPI, addBackgroundToUnderlines);
 	</script>
 </head>
+
+<!-- Photo grid style. From https://www.w3schools.com/howto/howto_css_image_grid_responsive.asp -->
+<style>
+	* {
+	    box-sizing: border-box;
+	}
+
+	body {
+	    margin: 0;
+	    font-family: Arial;
+	}
+
+	.header {
+	    text-align: center;
+	    padding: 32px;
+	}
+
+	.row {
+	    display: -ms-flexbox; /* IE10 */
+	    display: flex;
+	    -ms-flex-wrap: wrap; /* IE10 */
+	    flex-wrap: wrap;
+	    padding: 0 4px;
+	}
+
+	/* Create four equal columns that sits next to each other */
+	.column {
+	    -ms-flex: 25%; /* IE10 */
+	    flex: 25%;
+	    max-width: 25%;
+	    padding: 0 4px;
+	}
+
+	.column img {
+	    margin-top: 8px;
+	    vertical-align: middle;
+	}
+
+	/* Responsive layout - makes a two column-layout instead of four columns */
+	@media screen and (max-width: 800px) {
+	    .column {
+	        -ms-flex: 50%;
+	        flex: 50%;
+	        max-width: 50%;
+	    }
+	}
+
+	/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+	@media screen and (max-width: 600px) {
+	    .column {
+	        -ms-flex: 100%;
+	        flex: 100%;
+	        max-width: 100%;
+	    }
+	}
+</style>
 <body>
 	<div align="center">
 		<img src="coverphoto.png" style="max-width:25em;"><br/>
@@ -74,7 +130,36 @@
 		</div>
 
 		<div class="container" id="contentdiv">
-			While I find the time to make a proper portfolio, check out my <span class="thickgradientunderline"><a href="https://www.instagram.com/natiparte/">instagram art account.</a></span> 
+			While I find the time to make more organized portfolio, here's a photodump (roughly isomorphic to my <span class="thickgradientunderline"><a href="https://www.instagram.com/natiparte/">instagram art account.</a></span>)
+		
+		<!-- Photo Grid -->
+		<div class="row"> 
+		  <div class="column">
+		    <img src="art/original1.png" style="width:100%">
+		    <img src="art/original3.png" style="width:100%">
+		    <img src="art/portrait4.png" style="width:100%">
+		    <img src="art/original4-1.png" style="width:100%">
+		  </div>
+		  <div class="column">
+		    <img src="art/portrait1.png" style="width:100%">
+		    <img src="art/original2-1.png" style="width:100%">
+		    <img src="art/original2-2.png" style="width:100%">
+		    <img src="art/original6.png" style="width:100%">
+		  </div>  
+		  <div class="column">
+		    <img src="art/portrait2.png" style="width:100%">
+		    <img src="art/portrait3.png" style="width:100%">
+		    <img src="art/copy2.png" style="width:100%">
+		    <img src="art/original5.png" style="width:100%">
+		  </div>
+		  <div class="column">
+		    <img src="art/copy1.png" style="width:100%">
+		    <img src="art/portrait5.png" style="width:100%">
+		    <img src="art/copy3.png" style="width:100%">
+		    <img src="art/original4-2.png" style="width:100%">
+		  </div>
+		</div>
+
 		</div>
 	</div>
 </body>

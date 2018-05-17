@@ -1,17 +1,17 @@
 /*
-	A lot of the following code was modified from https://codepen.io/anon/pen/YLegaN
+  A lot of the following code was modified from https://codepen.io/anon/pen/YLegaN
 */
 
 div.menubar
 {
     font-family: 'Courier New', Courier, monospace;
     margin: 0 auto;
-	padding: 2em 2em;
-	text-align: center;
-	background: #FFF; /*just for testing sake*/
-	/*float:center;*/ 
-	display: inline-block; /* makes the width be content-sized */
-	white-space:nowrap; /*hopefully force 1 line*/
+  padding: 2em 2em;
+  text-align: center;
+  background: #FFF; /*just for testing sake*/
+  /*float:center;*/ 
+  display: inline-block; /* makes the width be content-sized */
+  white-space:nowrap; /*hopefully force 1 line*/
 }
 
 div.menubar a
@@ -44,17 +44,17 @@ div.pullDown a:hover:before
     height: 100%;
 }
 
-div.mycontainer
+div.container
 {
     font-family: 'Courier New', Courier, monospace;
     margin: 0 auto;
-	padding: 1em 1em;
-	text-align: left;
-	/*float:center;*/
-	background: #FFF;
-	color: #3A3A3A;
-	max-width:45em;
-	margin: auto;
+  padding: 1em 1em;
+  text-align: left;
+  /*float:center;*/
+  background: #FFF;
+  color: #3A3A3A;
+  max-width:45em;
+  margin: auto;
 }
 
 /*div.highlightTextIn a:before
@@ -70,13 +70,11 @@ div.mycontainer
     transform: scale(1.2);
     opacity: 0;
 } 
-
 div.highlightTextIn a:hover:before
 {
     transform: scale(1);
     opacity: 1;
 }
-
 div.highlightTextIn a
 {
     color: #DEA6FF; 
@@ -84,11 +82,11 @@ div.highlightTextIn a
 
 /* From https://codemyui.com/gradient-fill-underline-hover-effect-multiple-lines/ */
 .thickgradientunderline {
-	background-image: linear-gradient(120deg, #FF7279 0%, #80A7FF 100%);
+  background-image: linear-gradient(120deg, #FF7279 0%, #80A7FF 100%);
     background-repeat: no-repeat;
-	background-size: 100% 0.2em;
-	background-position: 0 88%;
-	transition: background-size 0.25s ease-in;
+  background-size: 100% 0.2em;
+  background-position: 0 88%;
+  transition: background-size 0.25s ease-in;
 }
 .thickgradientunderline:hover {
     background-size: 100% 88%;
@@ -96,52 +94,16 @@ div.highlightTextIn a
   }
 
 .thickgradientunderline a {
-	color: #3A3A3A;
-	text-decoration: none;
+  color: #3A3A3A;
+  text-decoration: none;
 }
 
 /*.thickgradientunderline a:hover {
-	color: #FFF;
+  color: #FFF;
 }*/
 
 .emph
 {
-	/*color: #CD7AFF;*/
-	font-weight: bold;
-}
-
-.multi-item-carousel{
-  .carousel-inner{
-    > .item{
-      transition: 500ms ease-in-out left;
-    }
-    .active{
-      &.left{
-        left:-33%;
-      }
-      &.right{
-        left:33%;
-      }
-    }
-    .next{
-      left: 33%;
-    }
-    .prev{
-      left: -33%;
-    }
-    @media all and (transform-3d), (-webkit-transform-3d) {
-      > .item{
-        // use your favourite prefixer here
-        transition: 500ms ease-in-out left;
-        transition: 500ms ease-in-out all;
-        backface-visibility: visible;
-        transform: none!important;
-      }
-    }
-  }
-  .carouse-control{
-    &.left, &.right{
-      background-image: none;
-    }
-  }
+  /*color: #CD7AFF;*/
+  font-weight: bold;
 }

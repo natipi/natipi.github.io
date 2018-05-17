@@ -1,6 +1,9 @@
 <html>
 <head>
 	<link rel="stylesheet" type="text/css" href="style.css" />
+
+	<script src="jquery-3.3.1.min.js"></script>
+
 	<!-- Making container same width as menubar 
 	<script> 
 		var w=document.getLementById('menubardiv').style.width;
@@ -20,20 +23,15 @@
 	<script>
 		// VARIABLES
 		const magicalUnderlines = Array.from(document.querySelectorAll('.underline--magical'));
-
 		const gradientAPI = 'https://gist.githubusercontent.com/wking-io/3e116c0e5675c8bcad8b5a6dc6ca5344/raw/4e783ce3ad0bcd98811c6531e40256b8feeb8fc8/gradient.json';
-
 		// HELPER FUNCTIONS
-
 		// 1. Get random number in range. Used to get random index from array.
 		const randNumInRange = max => Math.floor(Math.random() * (max - 1));
-
 		// 2. Merge two separate array values at the same index to 
 		// be the same value in new array.
 		const mergeArrays = (arrOne, arrTwo) => arrOne
 		  .map((item, i) => `${item} ${arrTwo[i]}`)
 		  .join(', ');
-
 		// 3. Curried function to add a background to array of elms
 		const addBackground = (elms) => (color) => {
 		  elms.forEach(el => {
@@ -46,16 +44,12 @@
 		  const data = await response.json();
 		  return data.data;
 		}
-
 		// 5. Partial Application of addBackground to always apply 
 		// background to the magicalUnderlines constant
 		const addBackgroundToUnderlines = addBackground(magicalUnderlines);
-
 		// GRADIENT FUNCTIONS
-
 		// 1. Build CSS formatted linear-gradient from API data
 		const buildGradient = (obj) => `linear-gradient(${obj.direction}, ${mergeArrays(obj.colors, obj.positions)})`;
-
 		// 2. Get single gradient from data pulled in array and
 		// apply single gradient to a callback function
 		const applyGradient = async(url, callback) => {
@@ -63,14 +57,9 @@
 		  const gradient = buildGradient(data[randNumInRange(data.length)]);
 		  callback(gradient);
 		}
-
 		// RESULT
 		applyGradient(gradientAPI, addBackgroundToUnderlines);
 	</script>
-
-	<!-- For the slider -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
 	<div align="center">
@@ -84,70 +73,9 @@
 		  <a href="more.html">&amp MORE</a> <!-- teaching, outreach, software -->
 		</div>
 
-		<div class="mycontainer" id="contentdiv">
+		<div class="container" id="contentdiv">
 			While I find the time to make a proper portfolio, check out my <span class="thickgradientunderline"><a href="https://www.instagram.com/natiparte/">instagram art account.</a></span> 
-
-			Ok y'all Imma try to make a carrousel. Here goes nothing. 
-
-			<div class="row">
-			    <div class="col-md-12">
-			      <div class="carousel slide multi-item-carousel" id="theCarousel">
-			        <div class="carousel-inner">
-			          <div class="item active">
-			            <div class="col-xs-4"><a href="#1"><img src="http://placehold.it/300/f44336/000000" class="img-responsive"></a></div>
-			          </div>
-			          <div class="item">
-			            <div class="col-xs-4"><a href="#1"><img src="http://placehold.it/300/e91e63/000000" class="img-responsive"></a></div>
-			          </div>
-			          <div class="item">
-			            <div class="col-xs-4"><a href="#1"><img src="http://placehold.it/300/9c27b0/000000" class="img-responsive"></a></div>
-			          </div>
-			          <div class="item">
-			            <div class="col-xs-4"><a href="#1"><img src="http://placehold.it/300/673ab7/000000" class="img-responsive"></a></div>
-			          </div>
-			          <div class="item">
-			            <div class="col-xs-4"><a href="#1"><img src="http://placehold.it/300/4caf50/000000" class="img-responsive"></a></div>
-			          </div>
-			          <div class="item">
-			            <div class="col-xs-4"><a href="#1"><img src="http://placehold.it/300/8bc34a/000000" class="img-responsive"></a></div>
-			          </div>
-			          <!-- add  more items here -->
-			          <!-- Example item start:  -->
-			          
-			          <div class="item">
-			            <div class="col-xs-4"><a href="#1"><img src="http://placehold.it/300/8bc34a/000000" class="img-responsive"></a></div>
-			          </div>
-			          
-			          <!--  Example item end -->
-			        </div>
-			        <a class="left carousel-control" href="#theCarousel" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
-			        <a class="right carousel-control" href="#theCarousel" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
-			      </div>
-			  </div>
-			</div>
 		</div>
 	</div>
-	<script>
-		// Instantiate the Bootstrap carousel
-		$('.multi-item-carousel').carousel({
-		  interval: false
-		});
-
-		// for every slide in carousel, copy the next slide's item in the slide.
-		// Do the same for the next, next item.
-		$('.multi-item-carousel .item').each(function(){
-		  var next = $(this).next();
-		  if (!next.length) {
-		    next = $(this).siblings(':first');
-		  }
-		  next.children(':first-child').clone().appendTo($(this));
-		  
-		  if (next.next().length>0) {
-		    next.next().children(':first-child').clone().appendTo($(this));
-		  } else {
-		  	$(this).siblings(':first').children(':first-child').clone().appendTo($(this));
-		  }
-		});
-	</script>
 </body>
 </html>

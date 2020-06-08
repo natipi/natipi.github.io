@@ -34,10 +34,10 @@
 }
 
 .foreground {
-  margin-top: 0vw;
+  margin-top: 10vw;
   margin-bottom: 50px;
   transform-origin: 0;
-  transform: translateZ(3px) scale(0.625);
+  transform: translateZ(3px) translateY(-30vh) scale(0.625);
 }
 
 .foreground h1 {
@@ -81,7 +81,8 @@ display: flex; /* Doesn’t display mydiv-2 at screen sizes upto 700px  */
   }
 }*/
 
-</style>
+</style
+</head>
 <body>
 <div class="parallax-container">
   <div class="background">
@@ -90,10 +91,10 @@ display: flex; /* Doesn’t display mydiv-2 at screen sizes upto 700px  */
   </div>
   <div class="foreground">
     <div class="foreground__content">
-      <img src="specs.png" style="width:80%;display:block;float:right;margin-right:5vw;">
+      <img src="specs.png" id="specs" style="width:80%;display:block;float:right;margin-right:5vw;">
     </div>
     <div class="foreground__content">
-      <img src="Grace-blm-grainier.png" style="width:90%;display:block;margin-left:auto;margin-right:auto;">
+      <img src="Grace-blm-grainier.png" style="width:90%;display:block;margin-left:auto;margin-right:auto;margin-top:100vh;">
     </div>
     <div class="foreground__content">
       <img src="blmfer.png" style="width:90%;display:block;margin-left:auto;margin-right:auto;margin-top:20px;">
@@ -107,6 +108,7 @@ display: flex; /* Doesn’t display mydiv-2 at screen sizes upto 700px  */
     <img class="background__image" src="background2-thin.png" style="width:100%;margin-top:-10px;transform:translateY(-4px)"/>
     <img class="background__image" src="background2-thin-flip.png" style="width:100%;margin-top:-10px;transform:translateY(-4px)"/>
   </div>
+
   <div class="mobile-foreground">
     <img src="specs-mobile-1.png" style="width:100%;display:block;margin-top:56vw;">
     <img src="specs-mobile-2.png" style="width:100%;">
@@ -116,5 +118,17 @@ display: flex; /* Doesn’t display mydiv-2 at screen sizes upto 700px  */
     <img src="blmfer.png" style="width:100%;margin-top:20px;">
   </div>
 </div>
+<script type="text/javascript">
+  var dynamicResize = function() {
+    if (screen.width < 1000 && screen.width > 700) {
+      document.getElementById("specs").style["width"] = (-20.0/300.0 * screen.width + 146.66).toString(10).concat("%")
+      console.log((-20.0/300.0 * screen.width + 146.66).toString(10).concat("%"))
+    }
+    else {
+      document.getElementById("specs").style["width"] = "80%";
+    } 
+  };
+  var timer =  setInterval(dynamicResize, 10);
+</script>
 </body>
 </html>

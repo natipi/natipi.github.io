@@ -9,83 +9,84 @@
   <title>Portraits4BlackLives</title>
 <!-- Photo grid style. From https://www.w3schools.com/howto/howto_css_image_grid_responsive.asp -->
 <style>
-  * {
-      box-sizing: border-box;
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  height: 200px;
+  width: 200px;
+  perspective: 8px;
+  perspective-origin: 50%;
+}
+
+.element {
+  height: 100px;
+  width: 100px;
+  background: red;
+  transform: translateZ(0px);
+  animation: animateZ 2s infinite;
+}
+
+.parallax-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  perspective: 8px;
+  perspective-origin: 0%;
+  display: flex;
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: translateZ(0px);
+}
+
+.foreground {
+  margin-top: auto;
+  margin-bottom: 50px;
+  transform-origin: 0;
+  transform: translateZ(3px) scale(0.625);
+}
+
+.foreground h1 {
+  font-size: 36px;
+}
+
+/*
+@keyframes animateZ {
+  from {
+    transform: translateZ(0px);
   }
-
-  body {
-      margin: 0;
-      font-family: Arial;
+  to {
+    transform: translateZ(4px);
   }
-
-.bigflex {
-    display: flex;
-    width:100%;
-    flex-wrap: wrap;
-}
-
-.tinyflex {
-    display: none;
-    width:100%;
-    flex-wrap: wrap;
-}
-
-.flex {
-    display: flex;
-    width:100%;
-    flex-wrap: wrap;
-}
-
-
-
-/*  .flex-container {
-      display: flex;
-
-      justify-content:space-between;
-    flex-flow: row wrap;
-    align-items: flex-start;
-    align-items:center;
-  }
-*/
-
-/*  img.align-self {
-      align-self: center;
-      margin-right: auto;
-  }*/
-
-@media only screen and (max-width: 700px) {
-.tinyflex {
-display: flex; /* displays mydiv as a block */
-}
-.bigflex {
-display: none; /* Doesn’t display mydiv-2 at screen sizes upto 700px  */
-}
-}
+}*/
 
 </style>
 <body>
-  <!-- Photo Grid -->
-  <div class="tinyflex"> 
-      <img src="blm-banner-1.png" style="align-self:center;width:100%;">
+<div class="parallax-container">
+  <div class="background">
+    <img class="background__image" src="background-thin.png" style="width:100%"/>
+    <img class="background__image" src="background2-thin-flip.png" style="width:100%;transform:translateY(-4px)"/>
   </div>
-  <div class="tinyflex"> 
-      <img src="blm-banner-2.png" style="align-self:center;width:100%;">
+  <div class="foreground">
+    <div class="foreground__content">
+      <img src="specs.png" style="width:80%;display:block;float:right;margin-right:5vw;margin-top:40vh;">
+    </div>
+    <div class="foreground__content">
+      <img src="grace-blm-grainier.png" style="width:90%;display:block;margin-left:auto;margin-right:auto;">
+    </div>
+    <div class="foreground__content">
+      <img src="blmfer.png" style="width:90%;display:block;margin-left:auto;margin-right:auto;margin-top:20px;">
+    </div>
   </div>
-  <div class="tinyflex"> 
-      <img src="blm-banner-3.png" style="align-self:center;width:100%;">
-  </div>
-  <div class="bigflex"> 
-      <img src="blm-banner-full.png" style="align-self:center;width:100%;">
-  </div>
-  <div class="flex"> 
-      <img src="blmfer.png" style="align-self:center;width:100%;">
-  </div>
-
-  <div class="flex"> 
-      <img src="grace.png" style="align-self:center;width:100%;">
-  </div>
-  <div class="flex"> 
-      <img src="Grace-blm-grainier.png" style="align-self:center;width:100%;">
-  </div>
+</div>
 </body>
 </html>

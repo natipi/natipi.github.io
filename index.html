@@ -9,24 +9,6 @@
   <title>Portraits4BlackLives</title>
 <!-- Photo grid style. From https://www.w3schools.com/howto/howto_css_image_grid_responsive.asp -->
 <style>
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid black;
-  height: 200px;
-  width: 200px;
-  perspective: 8px;
-  perspective-origin: 50%;
-}
-
-.element {
-  height: 100px;
-  width: 100px;
-  background: red;
-  transform: translateZ(0px);
-  animation: animateZ 2s infinite;
-}
 
 .parallax-container {
   position: relative;
@@ -62,6 +44,33 @@
   font-size: 36px;
 }
 
+.mobile {
+    display: none;
+    width:100%;
+    flex-wrap: wrap;
+}
+.mobile-background {
+  position:absolute;
+  top:0;
+  left:0;
+  width: 100%;
+  height: 100%;
+  z-index:-1;
+}
+.mobile-foreground{
+  margin-top: 0;
+  margin-bottom: 50px;
+  z-index: 0;
+}
+
+@media only screen and (max-width: 700px) {
+.parallax-container {
+display: none; /* displays mydiv as a block */
+}
+.mobile {
+display: flex; /* Doesn’t display mydiv-2 at screen sizes upto 700px  */
+}
+}
 /*
 @keyframes animateZ {
   from {
@@ -89,6 +98,22 @@
     <div class="foreground__content">
       <img src="blmfer.png" style="width:90%;display:block;margin-left:auto;margin-right:auto;margin-top:20px;">
     </div>
+  </div>
+</div>
+<div class="mobile">
+  <div class="mobile-background">
+    <img class="background__image" src="background-thin.png" style="width:100%"/>
+    <img class="background__image" src="background2-thin-flip.png" style="width:100%;margin-top:-10px;transform:translateY(-4px)"/>
+    <img class="background__image" src="background2-thin.png" style="width:100%;margin-top:-10px;transform:translateY(-4px)"/>
+    <img class="background__image" src="background2-thin-flip.png" style="width:100%;margin-top:-10px;transform:translateY(-4px)"/>
+  </div>
+  <div class="mobile-foreground">
+    <img src="specs-mobile-1.png" style="width:100%;display:block;margin-top:56vw;">
+    <img src="specs-mobile-2.png" style="width:100%;">
+    <img src="specs-mobile-3.png" style="width:100%;">
+    <img src="specs-mobile-4.png" style="width:30%;display:block;margin-left:auto;margin-right:auto;">
+    <img src="Grace-blm-grainier.png" style="width:100%;margin-top:20px;">
+    <img src="blmfer.png" style="width:100%;margin-top:20px;">
   </div>
 </div>
 </body>

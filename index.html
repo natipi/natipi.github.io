@@ -118,17 +118,5 @@ display: flex; /* Doesn’t display mydiv-2 at screen sizes upto 700px  */
     <img src="blmfer.png" style="width:100%;margin-top:20px;">
   </div>
 </div>
-<script type="text/javascript">
-  var dynamicResize = function() {
-    if (screen.width < 1000 && screen.width > 700) {
-      document.getElementById("specs").style["width"] = (-20.0/300.0 * screen.width + 146.66).toString(10).concat("%")
-      console.log((-20.0/300.0 * screen.width + 146.66).toString(10).concat("%"))
-    }
-    else {
-      document.getElementById("specs").style["width"] = "80%";
-    } 
-  };
-  var timer =  setInterval(dynamicResize, 10);
-</script>
 </body>
 </html>

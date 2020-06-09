@@ -9,14 +9,25 @@
   <title>Portraits4BlackLives</title>
 <!-- Photo grid style. From https://www.w3schools.com/howto/howto_css_image_grid_responsive.asp -->
 <style>
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #F4BAAC;
+}
+
+html {
+    height: 100%;
+}
 
 .parallax-container {
-  position: relative;
+  /*border: 5px solid black;*/
+  position: absolute;
   width: 99vw;
   height: 100vh;
   overflow-x: hidden;
   overflow-y: scroll;
-  perspective: 8px;
+  perspective: 10px;
   perspective-origin: 0%;
   display: flex;
   flex-wrap:wrap;
@@ -34,10 +45,23 @@
 }
 
 .foreground {
-  margin-top: 10vw;
-  margin-bottom: 50px;
+  position: absolute;
+  justify-content: center;
+  align-items: flex-start;
+  /*border: 5px solid red;*/
+  margin-top: 0;
+  margin-bottom: 0;
   transform-origin: 0;
-  transform: translateZ(3px) translateY(-30vh) scale(0.625);
+  /*transform: translateY(53vw);*/
+  transform: translateZ(2px) translateY(0px) scale(0.8);
+}
+.deco{
+  position: absolute;
+  height:100%;
+  width:100%;
+  transform: translateZ(5px) scale(0.5);
+  align-items: flex-start;
+  transform-origin: 0;
 }
 
 .foreground h1 {
@@ -82,7 +106,7 @@ display: flex; /* Doesn’t display mydiv-2 at screen sizes upto 700px  */
   }
 }*/
 
-</style
+</style>
 </head>
 <body>
 <div class="parallax-container">
@@ -90,7 +114,7 @@ display: flex; /* Doesn’t display mydiv-2 at screen sizes upto 700px  */
     <img class="background__image" src="background-thin.png" style="width:100%"/>
     <img class="background__image" src="background2-thin-flip.png" style="width:100%;transform:translateY(-4px)"/>
   </div>
-  <div class="foreground">
+  <div class="foreground" id="fg">
     <div class="foreground__content">
       <img src="specs.png" id="specs" style="width:80%;display:block;float:right;margin-right:5vw;">
     </div>
@@ -98,11 +122,17 @@ display: flex; /* Doesn’t display mydiv-2 at screen sizes upto 700px  */
       <img src="Grace-blm-grainier.png" style="width:90%;display:block;margin-left:auto;margin-right:auto;margin-top:100vh;">
     </div>
     <div class="foreground__content">
+      <img src="Henry-raw.png" style="width:90%;display:block;margin-left:auto;margin-right:auto;margin-top:20px;">
+    </div>
+    <div class="foreground__content">
       <img src="blmfer.png" style="width:90%;display:block;margin-left:auto;margin-right:auto;margin-top:20px;">
     </div>
     <div class="foreground__content">
       <p style="display:block;padding:5vw;margin-left:auto;margin-right:auto;font-family:monaco;color:#A6280D;font-size:30px;">To order a drawing, email portraits4blacklives@gmail.com. I make 1-2 drawings per day, so I might not be available for all requests immediately.</p>
     </div>
+  </div>
+  <div class="deco">
+      <img src="deco2.png" style="display:block;float:left;margin-left:5vw;width:20vw;transform:rotateZ(30deg)">
   </div>
 </div>
 <div class="mobile">
@@ -119,9 +149,16 @@ display: flex; /* Doesn’t display mydiv-2 at screen sizes upto 700px  */
     <img src="specs-mobile-3.png" style="width:100%;">
     <img src="specs-mobile-4.png" style="width:30%;display:block;margin-left:auto;margin-right:auto;">
     <img src="Grace-blm-grainier.png" style="width:100%;margin-top:20px;">
+    <img src="Henry-raw.png" style="width:100%;margin-top:20px;">
     <img src="blmfer.png" style="width:100%;margin-top:20px;">
     <p style="display:block;padding:5vw;margin-left:auto;margin-right:auto;font-family:monaco;color:#A6280D;font-size:16px;">To order a drawing, email portraits4blacklives@gmail.com. I make 1-2 drawings per day, so I might not be available for all requests immediately.</p>
   </div>
 </div>
+
+<script>
+window.scrollY + document.querySelector('#fg').getBoundingClientRect().top // Y
+window.scrollX + document.querySelector('#fg').getBoundingClientRect().left // X
+console.log(y.toStrring())
+</script>
 </body>
 </html>
